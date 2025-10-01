@@ -1,0 +1,59 @@
+{
+  "name": "ebub",
+  "version": "0.0.1",
+  "description": "A tool to explore, edit and query worlds of bubbles",
+  "main": "ebub-backend/main.js",
+  "keywords": [
+    "bubbles",
+    "questmaze",
+    "bubblegraph",
+    "blog",
+    "code",
+    "loop",
+    "python",
+    "codeloop",
+    "mindmap",
+    "stories"
+  ],
+  "scripts": {
+    "start": "../Electron.app/Contents/MacOS/Electron ."
+  },
+  "build": {
+    "appId": "ch.metasim.ebub",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "ebub-icons/ebub-icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "hardenedRuntime": true,
+      "entitlements": "build-scripts-and-metadata/entitlements.mac.plist",
+      "entitlementsInherit": "build-scripts-and-metadata/entitlements.mac.plist",
+      "gatekeeperAssess": false,
+      "identity": "Clement Hongler (9SSFG2BX47)",
+      "provisioningProfile": "build-scripts-and-metadata/embedded.provisionprofile"
+    },
+    "win": {
+      "icon": "ebub-icons/ebub-icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "extraMetadata": {
+      "ElectronTeamID": "9SSFG2BX47"
+    }
+  },
+  "afterSign": "scripts/notarize.js",
+  "author": "C. Hongler",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.3.1"
+  }
+}
